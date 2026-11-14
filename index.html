@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anisha | ಅನಿಶಾ – Organic Healthy Food</title>
+<meta name="description" content="Pure vegetarian, organic, millet-based healthy food for everyday health needs. Order on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Noto+Sans+Kannada:wght@400;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--leaf:#2F4A2B;--moss:#5C7A3A;--sage:#EAF0DF;--bg:#F7F9F1;--turmeric:#E3A82B;--bark:#4A3B2A;--white:#fff}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Nunito Sans','Noto Sans Kannada',sans-serif;background:var(--bg);color:var(--bark);line-height:1.6;padding-bottom:90px}
+h1,h2,h3{font-family:'Fraunces','Noto Sans Kannada',serif;color:var(--leaf);line-height:1.2}
+.hero{background:var(--leaf);color:#EEF3E2;padding:56px 20px 64px;text-align:center;position:relative;overflow:hidden}
+.hero:before{content:"🌿";position:absolute;font-size:180px;opacity:.07;right:-20px;top:-30px;transform:rotate(25deg)}
+.hero .kn{font-family:'Noto Sans Kannada',sans-serif;font-weight:700;font-size:clamp(56px,14vw,104px);color:var(--turmeric);line-height:1.1}
+.hero h1{color:#fff;font-size:clamp(22px,4vw,34px);margin:8px auto 14px;max-width:640px}
+.hero p{max-width:560px;margin:0 auto 22px;opacity:.92}
+.btn{display:inline-block;background:var(--turmeric);color:#2b2010;font-weight:700;border:0;border-radius:999px;padding:12px 26px;font-size:16px;cursor:pointer;text-decoration:none;font-family:inherit}
+.btn:focus-visible,.chip:focus-visible,.qty button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--turmeric);outline-offset:2px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px;font-size:14px}
+.badges span{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 14px}
+main{max-width:1040px;margin:0 auto;padding:36px 16px}
+.sec-h{font-size:28px;margin-bottom:6px}.sub{margin-bottom:18px;max-width:620px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;margin-bottom:18px}
+.chip{flex:none;border:1.5px solid var(--moss);background:transparent;color:var(--leaf);border-radius:999px;padding:7px 16px;font:600 14px 'Nunito Sans',sans-serif;cursor:pointer}
+.chip.on{background:var(--leaf);color:#fff;border-color:var(--leaf)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{background:var(--white);border-radius:18px;overflow:hidden;border:1px solid #DFE6D0;display:flex;flex-direction:column}
+.pic{height:170px;display:grid;place-items:center;font-size:76px;background:radial-gradient(circle at 30% 25%,#fff 0,var(--sage) 70%)}
+.pic img{width:100%;height:100%;object-fit:cover}
+.body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tag{font-size:13px;font-weight:700;color:var(--moss)}
+.card h3{font-size:19px}
+.card .ben{font-size:14px;flex:1}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.price{font-family:'Fraunces',serif;font-weight:700;font-size:22px;color:var(--leaf)}
+.price small{font:400 12px 'Nunito Sans',sans-serif;color:var(--bark)}
+.add{background:var(--leaf);color:#fff;border:0;border-radius:999px;padding:8px 20px;font:700 14px 'Nunito Sans',sans-serif;cursor:pointer}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--leaf);background:#fff;color:var(--leaf);font-size:18px;cursor:pointer}
+.pic svg{width:80%;height:90%}
+.own{background:var(--white);border:1.5px solid var(--moss);border-radius:18px;padding:22px;margin-top:36px}
+.own textarea{margin:10px 0 14px}
+.own h2{font-size:24px;margin-bottom:6px}
+.alt{display:block;font-size:13px;color:var(--moss);margin-top:-2px}
+.lang{position:fixed;top:12px;right:12px;z-index:8}
+.lang button{background:var(--turmeric);color:#2b2010;border:0;border-radius:999px;padding:8px 16px;font:700 14px 'Noto Sans Kannada','Nunito Sans',sans-serif;cursor:pointer;box-shadow:0 2px 8px #0003}
+.lang button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.note{background:var(--sage);border-radius:14px;padding:16px 18px;margin-top:36px;font-size:14px}
+footer{text-align:center;padding:30px 16px;font-size:14px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--leaf);color:#fff;padding:12px 16px;display:none;justify-content:space-between;align-items:center;z-index:5}
+.bar.show{display:flex}
+.sheet{position:fixed;inset:0;background:rgba(30,40,25,.55);display:none;z-index:10;align-items:flex-end;justify-content:center}
+.sheet.open{display:flex}
+.panel{background:var(--bg);width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:22px 22px 0 0;padding:22px}
+.panel h2{margin-bottom:12px}
+.line{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed #cfd8bd;font-size:15px}
+.tot{font-weight:700;font-size:18px;color:var(--leaf);border-bottom:0}
+label{display:block;font-weight:600;font-size:14px;margin-top:12px}
+select{width:100%;padding:10px;border:1.5px solid #cdd7bb;border-radius:10px;font:inherit;background:#fff}
+select:focus-visible{outline:3px solid var(--turmeric);outline-offset:2px}
+input,textarea{width:100%;padding:10px;border:1.5px solid #cdd7bb;border-radius:10px;font:inherit;background:#fff}
+.close{float:right;background:none;border:0;font-size:26px;cursor:pointer;color:var(--leaf)}
+@media(prefers-reduced-motion:no-preference){.card{transition:transform .2s}.card:hover{transform:translateY(-3px)}}
+</style>
+</head>
+<body>
+<div class="lang"><button id="lang" type="button" aria-label="Change language">ಕನ್ನಡ</button></div>
+
+<header class="hero">
+  <div class="kn">ಅನಿಶಾ</div>
+  <h1 data-t="h1">Anisha – organic, wholesome food and masala powders for every family</h1>
+  <p data-t="hp">Pure vegetarian meals, millet dishes, drinks and homemade powders, made in small batches with organic ingredients. For kids, working people, families, elders and anyone with a health need.</p>
+  <a class="btn" href="#menu" data-t="seemenu">See the menu</a>
+  <div class="badges"><span data-t="b1">100% Vegetarian</span><span data-t="b2">Organic ingredients</span><span data-t="b3">No preservatives</span><span data-t="b4">Freshly made</span></div>
+</header>
+
+<main>
+  <h2 class="sec-h" id="menu" data-t="menu">Our menu</h2>
+  <p class="sub" data-t="sub">Pick a health need, everyday meals or masala powders. Prices are per serving, or per pack for powders.</p>
+  <div class="chips" id="chips" role="tablist"></div>
+  <div class="grid" id="grid"></div>
+  <section class="own" id="ownbox">
+    <h2 data-t="oh">Make your own list</h2>
+    <p class="sub" data-t="op" style="margin-bottom:0">Need something that is not on the menu? Write what you want, one item per line (for example: 2 kg ragi flour, 500 g sambar powder, lunch for 20 people on Sunday). Anisha will confirm the price on WhatsApp.</p>
+    <textarea id="own" data-ph="oph" rows="5" placeholder="1 kg jowar flour&#10;200 g rasam powder&#10;Party meals for 15 people"></textarea>
+    <button class="btn" id="sendlist" data-t="sl">Send my list</button>
+  </section>
+  <div class="note" data-t="note"><strong>Please note:</strong> Our food supports a healthy lifestyle and is not a replacement for medicine or a doctor's advice. If you have a medical condition, follow your doctor's diet plan.</div>
+</main>
+
+<footer>
+  <strong>ಅನಿಶಾ Anisha</strong> · <span data-t="ft">Healthy food, cooked with care</span><br>
+  <span id="contact"></span>
+</footer>
+
+<div class="bar" id="bar">
+  <span id="barText"></span>
+  <button class="btn" id="open" data-t="vo">View order</button>
+</div>
+
+<div class="sheet" id="sheet">
+  <div class="panel" role="dialog" aria-label="Your order">
+    <button class="close" id="close" aria-label="Close">×</button>
+    <h2 data-t="yo">Your order</h2>
+    <div id="lines"></div>
+    <label for="nm" data-t="nm">Your name</label><input id="nm" autocomplete="name">
+    <label for="ph" data-t="ph">Phone number</label><input id="ph" type="tel" autocomplete="tel">
+    <label for="ad" data-t="ad">Delivery address</label><textarea id="ad" rows="2"></textarea>
+    <label for="zn" data-t="zn">Your distance from our kitchen (pincode 560050)</label><select id="zn"></select>
+    <label for="dt" data-t="dt">Delivery date and time</label><input id="dt" type="datetime-local">
+    <label for="ns" data-t="ns">Notes (allergies, less spice, etc.)</label><input id="ns">
+    <p data-t="wa" style="margin:16px 0 8px;font-size:14px">Your order opens in WhatsApp. Pay by UPI or cash on delivery.</p>
+    <button class="btn" id="send" data-t="so" style="width:100%">Send order on WhatsApp</button>
+  </div>
+</div>
+
+<script>
+/* ====== EDIT THESE ====== */
+const PHONE = "919241808161";   // your WhatsApp number with country code, no + or spaces
+/* Delivery charge by distance from your kitchen (fee: null = you confirm on WhatsApp) */
+const SLABS=[
+ {en:"Within 3 km",kn:"3 ಕಿ.ಮೀ ಒಳಗೆ",fee:40},
+ {en:"3 to 6 km",kn:"3 ರಿಂದ 6 ಕಿ.ಮೀ",fee:60},
+ {en:"6 to 10 km",kn:"6 ರಿಂದ 10 ಕಿ.ಮೀ",fee:90},
+ {en:"More than 10 km",kn:"10 ಕಿ.ಮೀ ಗಿಂತ ಹೆಚ್ಚು",fee:null}
+];
+const PACKING_FEE = 15;         // packing charge per order in ₹
+const MIN_ORDER = 150;          // minimum food total per order in ₹ (0 = no minimum)
+/* ======================== */
+
+/* img: put your own photo path, e.g. "images/ragi-mudde.jpg". Leave "" to show the emoji. */
+const ITEMS = [
+ {id:1,n:"Ragi Mudde with Soppu Saaru",c:"Diabetes",t:"bowl",k:["#6B4A3A","#7FA650"],p:155,b:"Slow-digesting finger millet with leafy-greens saaru. Gentle on blood sugar."},
+ {id:2,n:"Foxtail Millet Veg Pulao",c:"Diabetes",t:"bowl",k:["#E6C65A","#6FA34B"],p:145,b:"High-fibre millet cooked with seasonal vegetables and little oil."},
+ {id:3,n:"Jowar Roti Meal",c:"Diabetes",t:"plate",k:["#D9B779","#8DB05A"],p:170,b:"Two jowar rotis with palya, dal and cucumber raita."},
+ {id:4,n:"Millet Khichdi Bowl",c:"Weight loss",t:"bowl",k:["#E8C86A","#5E8F3E"],p:130,b:"Light, filling one-bowl meal with moong dal and vegetables."},
+ {id:5,n:"Sprouts Salad Bowl",c:"Weight loss",t:"bowl",k:["#A9CF6A","#E26B3A"],p:115,b:"Sprouted moong, cucumber, carrot and lemon. Raw, crunchy, protein-rich."},
+ {id:6,n:"Oats & Vegetable Soup",c:"Weight loss",t:"bowl",k:["#E9D3A3","#D86F3A"],p:90,b:"Warm, low-calorie soup that keeps you full for longer."},
+ {id:7,n:"Beetroot Carrot Soup",c:"Heart health",t:"bowl",k:["#B02A55","#F2E6C9"],p:90,b:"Rich in fibre and made without cream or butter."},
+ {id:8,n:"Brown Rice Veg Bowl",c:"Heart health",t:"bowl",k:["#B28B5E","#6FA34B"],p:145,b:"Unpolished rice with vegetables and cold-pressed coconut oil."},
+ {id:9,n:"Majjige (Spiced Buttermilk)",c:"Digestion",t:"glass",k:["#F6F1E3","#7FB04A"],p:50,b:"Fresh buttermilk with ginger, curry leaf and cumin to aid digestion."},
+ {id:10,n:"Pudina Ajwain Rasam Meal",c:"Digestion",t:"bowl",k:["#C8501F","#5E8F3E"],p:130,b:"Soothing rasam with soft rice and dal for a calm stomach."},
+ {id:11,n:"Moong Dal Khichdi",c:"Digestion",t:"bowl",k:["#F0D878","#E3A82B"],p:115,b:"Easy-to-digest comfort food, ideal when recovering or fasting."},
+ {id:12,n:"Turmeric Pepper Kashaya",c:"Immunity",t:"glass",k:["#D68A1F","#8B5A2B"],p:65,b:"Traditional herbal drink with turmeric, pepper, ginger, tulsi and jaggery."},
+ {id:13,n:"Fresh Amla Juice",c:"Immunity",t:"glass",k:["#B9D86A","#E3A82B"],p:80,b:"Cold-pressed gooseberry, a natural source of vitamin C."},
+ {id:14,n:"Nuggekai Soppu Palya Meal",c:"Thyroid & PCOS",t:"plate",k:["#3E7A32","#D9B779"],p:155,b:"Drumstick-leaf palya with millet roti, rich in iron and calcium."},
+ {id:15,n:"Flaxseed Ladoo (6 pcs)",c:"Thyroid & PCOS",t:"ladoo",k:["#7B4B2A","#C9A064"],p:180,u:"box",b:"Flax, sesame and jaggery ladoo with omega-3 and no refined sugar."},
+ {id:16,n:"Ragi Malt with Jaggery",c:"Kids & Elders",t:"glass",k:["#8A5A3B","#F3E3C3"],p:65,b:"Calcium-rich finger millet drink, naturally sweetened."},
+ {id:17,n:"Soft Veg Dalia Porridge",c:"Kids & Elders",t:"bowl",k:["#E8C98A","#C86A3A"],p:105,b:"Mildly spiced, easy to chew and swallow, full of nourishment."},
+ {id:18,n:"Dry Fruit Ladoo (6 pcs)",c:"Kids & Elders",t:"ladoo",k:["#A06A3C","#E3B54A"],p:195,u:"box",b:"Dates, figs, almonds and nuts. A wholesome snack for energy."},
+ {id:19,n:"Curd Rice",c:"Everyday meals",t:"bowl",k:["#FAF7EC","#6FA34B"],p:90,b:"Soft rice with fresh curd, mustard tempering and pomegranate."},
+ {id:20,n:"Lemon Rice",c:"Everyday meals",t:"bowl",k:["#F2D64B","#6FA34B"],p:105,b:"Tangy, light rice with peanuts and curry leaves."},
+ {id:21,n:"Idli (4 pcs) with Chutney & Sambar",c:"Everyday meals",t:"plate",k:["#FBF8EE","#D86F3A"],p:80,b:"Soft steamed idlis with coconut chutney and hot sambar."},
+ {id:22,n:"Dosa with Chutney",c:"Everyday meals",t:"plate",k:["#D9A44A","#F5F0E0"],p:80,b:"Crisp golden dosa served with coconut chutney."},
+ {id:23,n:"Chapati (3 pcs) with Palya",c:"Everyday meals",t:"plate",k:["#D9B779","#6FA34B"],p:115,b:"Soft wheat chapatis with a seasonal vegetable palya."},
+ {id:24,n:"Bisibelebath",c:"Everyday meals",t:"bowl",k:["#D9822B","#7FA650"],p:145,b:"Karnataka's classic rice, lentil and vegetable dish with ghee."},
+ {id:25,n:"Sambar Rice",c:"Everyday meals",t:"bowl",k:["#D07A2A","#6FA34B"],p:115,b:"Rice and sambar cooked together, simple and comforting."},
+ {id:26,n:"Vegetable Upma",c:"Everyday meals",t:"bowl",k:["#E8C86A","#6FA34B"],p:80,b:"Rava upma with carrot, beans and green peas."},
+ {id:27,n:"Ven Pongal",c:"Everyday meals",t:"bowl",k:["#F0DD9A","#8B6B3A"],p:90,b:"Creamy rice and moong dal with pepper, cumin and ghee."},
+ {id:28,n:"Anisha Full Meals Thali",c:"Everyday meals",t:"plate",k:["#FBF8EE","#C8501F"],p:195,b:"Rice, chapati, sambar, palya, kosambari, curd and payasa."},
+ {id:29,n:"Vangibath Powder",c:"Masala powders",t:"pouch",k:["#8A4B2A","#F5E9D0"],p:115,u:"100 g",b:"Aromatic brinjal rice masala, freshly roasted and ground."},
+ {id:30,n:"Sambar Powder",c:"Masala powders",t:"pouch",k:["#C8501F","#F5E9D0"],p:105,u:"100 g",b:"Traditional sambar masala with coriander, dal and red chilli."},
+ {id:31,n:"Puliyogare Powder",c:"Masala powders",t:"pouch",k:["#9A5A22","#F5E9D0"],p:130,u:"100 g",b:"Tamarind rice masala with sesame, peanuts and fenugreek."},
+ {id:32,n:"Rasam Powder",c:"Masala powders",t:"pouch",k:["#B8321F","#F5E9D0"],p:105,u:"100 g",b:"Pepper and cumin rasam powder, good for colds and digestion."},
+ {id:33,n:"Bisibelebath Powder",c:"Masala powders",t:"pouch",k:["#B5651D","#F5E9D0"],p:125,u:"100 g",b:"Authentic Karnataka bisibelebath masala."},
+ {id:34,n:"Chutney Powder (Pudi)",c:"Masala powders",t:"pouch",k:["#7A3B1E","#F5E9D0"],p:110,u:"100 g",b:"Garlic-free gunpowder for idli, dosa and rice."},
+ {id:35,n:"Curry Leaf Powder",c:"Masala powders",t:"pouch",k:["#3E6B2E","#F5E9D0"],p:115,u:"100 g",b:"Iron-rich curry leaf podi, wonderful with hot rice and ghee."},
+ {id:36,n:"Millet Health Mix",c:"Masala powders",t:"pouch",k:["#8A5A3B","#F5E9D0"],p:155,u:"250 g",b:"Ragi, jowar and sprouted grain mix for porridge. Great for kids and elders."}
+];
+const CATS=["All",...new Set(ITEMS.map(i=>i.c))];
+const cart={};let cat="All";
+const $=s=>document.querySelector(s);
+const rs=n=>"₹"+n;
+
+function art(i){const [a,b]=i.k,sh='<ellipse cx="100" cy="132" rx="62" ry="7" fill="#0001"/>';let g="";
+ if(i.t==="bowl")g=sh+`<path d="M28 72h144a72 58 0 0 1-144 0z" fill="#fff" stroke="#c9d3b4" stroke-width="3"/><ellipse cx="100" cy="72" rx="72" ry="15" fill="${a}"/>`+[[70,70],[95,74],[122,69],[145,73],[108,66]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="4.5" fill="${b}"/>`).join("")+`<path d="M80 50q-8-12 0-22M104 48q-8-12 0-22M128 50q-8-12 0-22" stroke="#9aa58a" stroke-width="3" fill="none" stroke-linecap="round"/>`;
+ else if(i.t==="plate")g=sh+`<ellipse cx="100" cy="82" rx="82" ry="40" fill="#fff" stroke="#c9d3b4" stroke-width="3"/><ellipse cx="78" cy="78" rx="30" ry="17" fill="${a}"/><ellipse cx="124" cy="82" rx="26" ry="15" fill="${a}" opacity=".85"/><circle cx="104" cy="98" r="11" fill="${b}"/><circle cx="140" cy="68" r="8" fill="${b}"/>`;
+ else if(i.t==="glass")g=sh+`<path d="M62 30h76l-10 96H72z" fill="#ffffffaa" stroke="#c9d3b4" stroke-width="3"/><path d="M66 56h68l-7 70H73z" fill="${a}"/><circle cx="100" cy="42" r="12" fill="${b}"/><path d="M118 20l12-14" stroke="${b}" stroke-width="4" stroke-linecap="round"/>`;
+ else if(i.t==="ladoo")g=sh+[[70,100,26],[130,100,26],[100,66,26]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="${p[2]}" fill="${a}"/><circle cx="${p[0]-8}" cy="${p[1]-8}" r="5" fill="${b}"/><circle cx="${p[0]+9}" cy="${p[1]+4}" r="4" fill="${b}"/>`).join("");
+ else g=sh+`<ellipse cx="148" cy="124" rx="30" ry="9" fill="${a}"/><path d="M122 124q26-34 52 0z" fill="${a}"/><path d="M50 34h62l6 94H44z" fill="${a}"/><path d="M50 34l6 8 6-8 6 8 6-8 6 8 6-8 6 8 6-8v-8H50z" fill="${a}" opacity=".7"/><rect x="56" y="58" width="50" height="46" rx="6" fill="${b}"/><text x="81" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="${a}" font-family="sans-serif">ANISHA</text><text x="81" y="95" text-anchor="middle" font-size="9" fill="${a}" font-family="'Noto Sans Kannada',sans-serif">ಅನಿಶಾ</text>`;
+ return `<svg viewBox="0 0 200 150" role="img" aria-label="${i.n}">${g}</svg>`;}
+const CK={"Diabetes":"ಮಧುಮೇಹ","Weight loss":"ತೂಕ ಇಳಿಕೆ","Heart health":"ಹೃದಯದ ಆರೋಗ್ಯ","Digestion":"ಜೀರ್ಣಕ್ರಿಯೆ","Immunity":"ರೋಗನಿರೋಧಕ ಶಕ್ತಿ","Thyroid & PCOS":"ಥೈರಾಯ್ಡ್ ಮತ್ತು ಪಿಸಿಓಎಸ್","Kids & Elders":"ಮಕ್ಕಳು ಮತ್ತು ಹಿರಿಯರು","Everyday meals":"ದಿನನಿತ್ಯದ ಊಟ","Masala powders":"ಮಸಾಲೆ ಪುಡಿಗಳು"};
+const UNIT={"serving":"ಸರ್ವಿಂಗ್","box":"ಬಾಕ್ಸ್","100 g":"100 ಗ್ರಾಂ","250 g":"250 ಗ್ರಾಂ"};
+/* name, description in Kannada, by item id */
+const KN={
+1:["ರಾಗಿ ಮುದ್ದೆ ಸೊಪ್ಪಿನ ಸಾರು ಜೊತೆ","ನಿಧಾನವಾಗಿ ಜೀರ್ಣವಾಗುವ ರಾಗಿ, ಸೊಪ್ಪಿನ ಸಾರಿನೊಂದಿಗೆ. ರಕ್ತದ ಸಕ್ಕರೆಗೆ ಸ್ನೇಹಿ."],
+2:["ನವಣೆ ತರಕಾರಿ ಪುಲಾವ್","ಹೆಚ್ಚು ನಾರಿನಂಶವಿರುವ ನವಣೆ, ಕಾಲೋಚಿತ ತರಕಾರಿ ಮತ್ತು ಕಡಿಮೆ ಎಣ್ಣೆಯಲ್ಲಿ."],
+3:["ಜೋಳದ ರೊಟ್ಟಿ ಊಟ","ಎರಡು ಜೋಳದ ರೊಟ್ಟಿ, ಪಲ್ಯ, ದಾಲ್ ಮತ್ತು ಸೌತೆಕಾಯಿ ರಾಯತ."],
+4:["ಸಿರಿಧಾನ್ಯ ಕಿಚಡಿ ಬೌಲ್","ಹೆಸರುಬೇಳೆ ಮತ್ತು ತರಕಾರಿಯ ಹಗುರ, ಹೊಟ್ಟೆ ತುಂಬುವ ಒಂದು ಬೌಲ್ ಊಟ."],
+5:["ಮೊಳಕೆ ಕಾಳು ಸಲಾಡ್","ಮೊಳಕೆ ಹೆಸರುಕಾಳು, ಸೌತೆಕಾಯಿ, ಕ್ಯಾರೆಟ್ ಮತ್ತು ನಿಂಬೆ. ಹಸಿ, ಗರಿಗರಿ, ಪ್ರೋಟೀನ್ ಭರಿತ."],
+6:["ಓಟ್ಸ್ ತರಕಾರಿ ಸೂಪ್","ಕಡಿಮೆ ಕ್ಯಾಲೊರಿಯ ಬಿಸಿ ಸೂಪ್, ಹೆಚ್ಚು ಹೊತ್ತು ಹೊಟ್ಟೆ ತುಂಬಿರುವಂತೆ ಮಾಡುತ್ತದೆ."],
+7:["ಬೀಟ್‌ರೂಟ್ ಕ್ಯಾರೆಟ್ ಸೂಪ್","ನಾರಿನಂಶ ಹೆಚ್ಚು; ಕ್ರೀಮ್ ಅಥವಾ ಬೆಣ್ಣೆ ಇಲ್ಲದೆ ತಯಾರಿಸಿದ್ದು."],
+8:["ಬ್ರೌನ್ ರೈಸ್ ತರಕಾರಿ ಬೌಲ್","ಪಾಲಿಶ್ ಮಾಡದ ಅಕ್ಕಿ, ತರಕಾರಿ ಮತ್ತು ಗಾಣದ ಕೊಬ್ಬರಿ ಎಣ್ಣೆಯೊಂದಿಗೆ."],
+9:["ಮಸಾಲೆ ಮಜ್ಜಿಗೆ","ಶುಂಠಿ, ಕರಿಬೇವು ಮತ್ತು ಜೀರಿಗೆ ಹಾಕಿದ ತಾಜಾ ಮಜ್ಜಿಗೆ; ಜೀರ್ಣಕ್ರಿಯೆಗೆ ಸಹಾಯಕ."],
+10:["ಪುದೀನ ಓಮ ರಸಂ ಊಟ","ಮೃದುವಾದ ಅನ್ನ ಮತ್ತು ದಾಲ್‌ನೊಂದಿಗೆ ಹಿತವಾದ ರಸಂ, ಹೊಟ್ಟೆಗೆ ಆರಾಮ."],
+11:["ಹೆಸರುಬೇಳೆ ಕಿಚಡಿ","ಸುಲಭವಾಗಿ ಜೀರ್ಣವಾಗುವ ಮನೆ ಊಟ; ಚೇತರಿಕೆ ಅಥವಾ ಉಪವಾಸದ ವೇಳೆ ಸೂಕ್ತ."],
+12:["ಅರಿಶಿನ ಕಾಳುಮೆಣಸಿನ ಕಷಾಯ","ಅರಿಶಿನ, ಕಾಳುಮೆಣಸು, ಶುಂಠಿ, ತುಳಸಿ ಮತ್ತು ಬೆಲ್ಲದ ಸಾಂಪ್ರದಾಯಿಕ ಗಿಡಮೂಲಿಕೆ ಪಾನೀಯ."],
+13:["ತಾಜಾ ನೆಲ್ಲಿಕಾಯಿ ಜ್ಯೂಸ್","ಗಾಣದಲ್ಲಿ ತೆಗೆದ ನೆಲ್ಲಿಕಾಯಿ ರಸ; ವಿಟಮಿನ್ ಸಿ ಯ ನೈಸರ್ಗಿಕ ಮೂಲ."],
+14:["ನುಗ್ಗೆಸೊಪ್ಪಿನ ಪಲ್ಯ ಊಟ","ನುಗ್ಗೆ ಸೊಪ್ಪಿನ ಪಲ್ಯ ಮತ್ತು ಸಿರಿಧಾನ್ಯ ರೊಟ್ಟಿ; ಕಬ್ಬಿಣ ಮತ್ತು ಕ್ಯಾಲ್ಸಿಯಂ ಸಮೃದ್ಧ."],
+15:["ಅಗಸೆ ಬೀಜದ ಉಂಡೆ (6)","ಅಗಸೆ, ಎಳ್ಳು ಮತ್ತು ಬೆಲ್ಲದ ಉಂಡೆ; ಒಮೆಗಾ-3 ಇದ್ದು ಸಂಸ್ಕರಿಸಿದ ಸಕ್ಕರೆ ಇಲ್ಲ."],
+16:["ಬೆಲ್ಲದ ರಾಗಿ ಮಾಲ್ಟ್","ಕ್ಯಾಲ್ಸಿಯಂ ಭರಿತ ರಾಗಿ ಪಾನೀಯ, ಬೆಲ್ಲದಿಂದ ಸಿಹಿ."],
+17:["ಮೃದು ತರಕಾರಿ ಗೋಧಿ ರವೆ ಗಂಜಿ","ಕಡಿಮೆ ಖಾರ, ಜಗಿಯಲು ಮತ್ತು ನುಂಗಲು ಸುಲಭ, ಪೌಷ್ಟಿಕ."],
+18:["ಡ್ರೈ ಫ್ರೂಟ್ ಉಂಡೆ (6)","ಖರ್ಜೂರ, ಅಂಜೂರ, ಬಾದಾಮಿ ಮತ್ತು ಬೀಜಗಳ ಪೌಷ್ಟಿಕ ತಿಂಡಿ; ಶಕ್ತಿಗೆ."],
+19:["ಮೊಸರನ್ನ","ತಾಜಾ ಮೊಸರು, ಸಾಸಿವೆ ಒಗ್ಗರಣೆ ಮತ್ತು ದಾಳಿಂಬೆ ಹಾಕಿದ ಮೃದು ಅನ್ನ."],
+20:["ನಿಂಬೆ ಚಿತ್ರಾನ್ನ","ಕಡಲೆಬೀಜ, ಕರಿಬೇವು ಹಾಕಿದ ಹುಳಿ ಹುಳಿ ಹಗುರ ಅನ್ನ."],
+21:["ಇಡ್ಲಿ (4) ಚಟ್ನಿ, ಸಾಂಬಾರ್ ಜೊತೆ","ತೆಂಗಿನ ಚಟ್ನಿ ಮತ್ತು ಬಿಸಿ ಸಾಂಬಾರ್ ಜೊತೆ ಮೃದು ಇಡ್ಲಿ."],
+22:["ದೋಸೆ ಚಟ್ನಿ ಜೊತೆ","ತೆಂಗಿನ ಚಟ್ನಿಯೊಂದಿಗೆ ಗರಿಗರಿ ಚಿನ್ನದ ಬಣ್ಣದ ದೋಸೆ."],
+23:["ಚಪಾತಿ (3) ಪಲ್ಯದ ಜೊತೆ","ಕಾಲೋಚಿತ ತರಕಾರಿ ಪಲ್ಯದೊಂದಿಗೆ ಮೃದು ಗೋಧಿ ಚಪಾತಿ."],
+24:["ಬಿಸಿಬೇಳೆ ಬಾತ್","ಅನ್ನ, ಬೇಳೆ, ತರಕಾರಿ ಮತ್ತು ತುಪ್ಪದ ಕರ್ನಾಟಕದ ಪ್ರಸಿದ್ಧ ಖಾದ್ಯ."],
+25:["ಸಾಂಬಾರ್ ಅನ್ನ","ಅನ್ನ ಮತ್ತು ಸಾಂಬಾರ್ ಒಟ್ಟಿಗೆ ಬೇಯಿಸಿದ ಸರಳ, ಹಿತವಾದ ಊಟ."],
+26:["ತರಕಾರಿ ಉಪ್ಪಿಟ್ಟು","ಕ್ಯಾರೆಟ್, ಬೀನ್ಸ್ ಮತ್ತು ಬಟಾಣಿ ಹಾಕಿದ ರವೆ ಉಪ್ಪಿಟ್ಟು."],
+27:["ವೆನ್ ಪೊಂಗಲ್","ಕಾಳುಮೆಣಸು, ಜೀರಿಗೆ ಮತ್ತು ತುಪ್ಪ ಹಾಕಿದ ಅಕ್ಕಿ-ಹೆಸರುಬೇಳೆಯ ಮೃದು ಪೊಂಗಲ್."],
+28:["ಅನಿಶಾ ಪೂರ್ಣ ಊಟ (ಥಾಲಿ)","ಅನ್ನ, ಚಪಾತಿ, ಸಾಂಬಾರ್, ಪಲ್ಯ, ಕೋಸಂಬರಿ, ಮೊಸರು ಮತ್ತು ಪಾಯಸ."],
+29:["ವಾಂಗಿಬಾತ್ ಪುಡಿ","ಹುರಿದು ಪುಡಿ ಮಾಡಿದ ಘಮಘಮಿಸುವ ಬದನೆಕಾಯಿ ಅನ್ನದ ಮಸಾಲೆ."],
+30:["ಸಾಂಬಾರ್ ಪುಡಿ","ಕೊತ್ತಂಬರಿ, ಬೇಳೆ ಮತ್ತು ಒಣ ಮೆಣಸಿನಕಾಯಿಯ ಸಾಂಪ್ರದಾಯಿಕ ಸಾಂಬಾರ್ ಮಸಾಲೆ."],
+31:["ಪುಳಿಯೋಗರೆ ಪುಡಿ","ಎಳ್ಳು, ಕಡಲೆಬೀಜ ಮತ್ತು ಮೆಂತ್ಯ ಹಾಕಿದ ಹುಣಸೆ ಅನ್ನದ ಮಸಾಲೆ."],
+32:["ರಸಂ ಪುಡಿ","ಕಾಳುಮೆಣಸು ಮತ್ತು ಜೀರಿಗೆಯ ರಸಂ ಪುಡಿ; ಶೀತ ಮತ್ತು ಜೀರ್ಣಕ್ರಿಯೆಗೆ ಒಳ್ಳೆಯದು."],
+33:["ಬಿಸಿಬೇಳೆ ಬಾತ್ ಪುಡಿ","ಅಸಲಿ ಕರ್ನಾಟಕ ಶೈಲಿಯ ಬಿಸಿಬೇಳೆ ಬಾತ್ ಮಸಾಲೆ."],
+34:["ಚಟ್ನಿ ಪುಡಿ","ಬೆಳ್ಳುಳ್ಳಿ ಇಲ್ಲದ ಚಟ್ನಿ ಪುಡಿ; ಇಡ್ಲಿ, ದೋಸೆ ಮತ್ತು ಅನ್ನಕ್ಕೆ."],
+35:["ಕರಿಬೇವು ಪುಡಿ","ಕಬ್ಬಿಣಾಂಶ ಭರಿತ ಕರಿಬೇವು ಪುಡಿ; ಬಿಸಿ ಅನ್ನ ಮತ್ತು ತುಪ್ಪದ ಜೊತೆ ಅದ್ಭುತ."],
+36:["ಸಿರಿಧಾನ್ಯ ಹೆಲ್ತ್ ಮಿಕ್ಸ್","ರಾಗಿ, ಜೋಳ ಮತ್ತು ಮೊಳಕೆ ಕಾಳುಗಳ ಮಿಶ್ರಣ, ಗಂಜಿಗೆ. ಮಕ್ಕಳು ಮತ್ತು ಹಿರಿಯರಿಗೆ ಉತ್ತಮ."]};
+/* page text: [English, Kannada] */
+const UI={
+h1:["Anisha – organic, wholesome food and masala powders for every family","ಅನಿಶಾ – ಪ್ರತಿ ಕುಟುಂಬಕ್ಕೂ ಸಾವಯವ, ಪೌಷ್ಟಿಕ ಆಹಾರ ಮತ್ತು ಮಸಾಲೆ ಪುಡಿಗಳು"],
+hp:["Pure vegetarian meals, millet dishes, drinks and homemade powders, made in small batches with organic ingredients. For kids, working people, families, elders and anyone with a health need.","ಶುದ್ಧ ಸಸ್ಯಾಹಾರಿ ಊಟ, ಸಿರಿಧಾನ್ಯ ಖಾದ್ಯಗಳು, ಪಾನೀಯಗಳು ಮತ್ತು ಮನೆಯಲ್ಲೇ ತಯಾರಿಸಿದ ಪುಡಿಗಳು. ಸಾವಯವ ಪದಾರ್ಥಗಳಿಂದ ಸಣ್ಣ ಪ್ರಮಾಣದಲ್ಲಿ ತಯಾರಿಸಲಾಗುತ್ತದೆ. ಮಕ್ಕಳು, ಉದ್ಯೋಗಿಗಳು, ಕುಟುಂಬಗಳು, ಹಿರಿಯರು ಮತ್ತು ಆರೋಗ್ಯ ಸಮಸ್ಯೆ ಇರುವ ಎಲ್ಲರಿಗೂ."],
+seemenu:["See the menu","ಮೆನು ನೋಡಿ"],
+b1:["100% Vegetarian","100% ಸಸ್ಯಾಹಾರಿ"],b2:["Organic ingredients","ಸಾವಯವ ಪದಾರ್ಥಗಳು"],b3:["No preservatives","ಪ್ರಿಸರ್ವೇಟಿವ್ ಇಲ್ಲ"],b4:["Freshly made","ತಾಜಾ ತಯಾರಿ"],
+menu:["Our menu","ನಮ್ಮ ಮೆನು"],
+sub:["Pick a health need, everyday meals or masala powders. Prices are per serving, or per pack for powders.","ಆರೋಗ್ಯ ಅಗತ್ಯ, ದಿನನಿತ್ಯದ ಊಟ ಅಥವಾ ಮಸಾಲೆ ಪುಡಿಗಳನ್ನು ಆರಿಸಿ. ಬೆಲೆ ಪ್ರತಿ ಸರ್ವಿಂಗ್‌ಗೆ, ಪುಡಿಗಳಿಗೆ ಪ್ರತಿ ಪ್ಯಾಕ್‌ಗೆ."],
+oh:["Make your own list","ನಿಮ್ಮದೇ ಪಟ್ಟಿ ಮಾಡಿ"],
+op:["Need something that is not on the menu? Write what you want, one item per line (for example: 2 kg ragi flour, 500 g sambar powder, lunch for 20 people on Sunday). Anisha will confirm the price on WhatsApp.","ಮೆನುವಿನಲ್ಲಿಲ್ಲದ ಏನಾದರೂ ಬೇಕೆ? ನಿಮಗೆ ಬೇಕಾದದ್ದನ್ನು ಒಂದು ಸಾಲಿಗೆ ಒಂದರಂತೆ ಬರೆಯಿರಿ (ಉದಾ: 2 ಕೆಜಿ ರಾಗಿ ಹಿಟ್ಟು, 500 ಗ್ರಾಂ ಸಾಂಬಾರ್ ಪುಡಿ, ಭಾನುವಾರ 20 ಜನರಿಗೆ ಊಟ). ಬೆಲೆಯನ್ನು ಅನಿಶಾ ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ತಿಳಿಸುತ್ತಾರೆ."],
+oph:["1 kg jowar flour\n200 g rasam powder\nParty meals for 15 people","1 ಕೆಜಿ ಜೋಳದ ಹಿಟ್ಟು\n200 ಗ್ರಾಂ ರಸಂ ಪುಡಿ\n15 ಜನರಿಗೆ ಪಾರ್ಟಿ ಊಟ"],
+sl:["Send my list","ನನ್ನ ಪಟ್ಟಿ ಕಳುಹಿಸಿ"],
+note:["<strong>Please note:</strong> Our food supports a healthy lifestyle and is not a replacement for medicine or a doctor's advice. If you have a medical condition, follow your doctor's diet plan.","<strong>ಗಮನಿಸಿ:</strong> ನಮ್ಮ ಆಹಾರ ಆರೋಗ್ಯಕರ ಜೀವನಶೈಲಿಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ; ಇದು ಔಷಧಿ ಅಥವಾ ವೈದ್ಯರ ಸಲಹೆಗೆ ಪರ್ಯಾಯವಲ್ಲ. ಆರೋಗ್ಯ ಸಮಸ್ಯೆ ಇದ್ದರೆ ನಿಮ್ಮ ವೈದ್ಯರ ಆಹಾರ ಸಲಹೆಯನ್ನು ಪಾಲಿಸಿ."],
+ft:["Healthy food, cooked with care","ಪ್ರೀತಿಯಿಂದ ತಯಾರಿಸಿದ ಆರೋಗ್ಯಕರ ಆಹಾರ"],
+vo:["View order","ಆರ್ಡರ್ ನೋಡಿ"],yo:["Your order","ನಿಮ್ಮ ಆರ್ಡರ್"],
+nm:["Your name","ನಿಮ್ಮ ಹೆಸರು"],ph:["Phone number","ಫೋನ್ ಸಂಖ್ಯೆ"],ad:["Delivery address","ತಲುಪಿಸುವ ವಿಳಾಸ"],dt:["Delivery date and time","ತಲುಪಿಸುವ ದಿನಾಂಕ ಮತ್ತು ಸಮಯ"],ns:["Notes (allergies, less spice, etc.)","ಟಿಪ್ಪಣಿ (ಅಲರ್ಜಿ, ಕಡಿಮೆ ಖಾರ, ಇತ್ಯಾದಿ)"],
+wa:["Your order opens in WhatsApp. Pay by UPI or cash on delivery.","ನಿಮ್ಮ ಆರ್ಡರ್ ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ತೆರೆಯುತ್ತದೆ. UPI ಅಥವಾ ಡೆಲಿವರಿ ವೇಳೆ ನಗದು ಪಾವತಿಸಿ."],
+so:["Send order on WhatsApp","ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ಆರ್ಡರ್ ಕಳುಹಿಸಿ"],
+zn:["Your distance from our kitchen (pincode 560050)","ನಮ್ಮ ಅಡುಗೆಮನೆಯಿಂದ ನಿಮ್ಮ ದೂರ (ಪಿನ್‌ಕೋಡ್ 560050)"],
+pk:["Packing charge","ಪ್ಯಾಕಿಂಗ್ ಶುಲ್ಕ"],tbc:["To be confirmed on WhatsApp","ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ತಿಳಿಸಲಾಗುವುದು"],
+minq:["Minimum order is {x}. Please add more items.","ಕನಿಷ್ಠ ಆರ್ಡರ್ {x}. ದಯವಿಟ್ಟು ಇನ್ನಷ್ಟು ಐಟಂ ಸೇರಿಸಿ."],
+all:["All","ಎಲ್ಲಾ"],add:["Add","ಸೇರಿಸಿ"],
+ftot:["Food total","ಆಹಾರದ ಮೊತ್ತ"],dc:["Delivery charge","ಡೆಲಿವರಿ ಶುಲ್ಕ"],free:["Free","ಉಚಿತ"],tot:["Total to pay","ಒಟ್ಟು ಪಾವತಿ"],
+more:["Add {x} more for free delivery","ಉಚಿತ ಡೆಲಿವರಿಗೆ ಇನ್ನೂ {x} ಸೇರಿಸಿ"],
+ol:["Your own list","ನಿಮ್ಮ ಪಟ್ಟಿ"],oc:["Anisha will confirm the price and delivery for these on WhatsApp.","ಇವುಗಳ ಬೆಲೆ ಮತ್ತು ಡೆಲಿವರಿಯನ್ನು ಅನಿಶಾ ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ತಿಳಿಸುತ್ತಾರೆ."],
+it1:["item","ಐಟಂ"],itn:["items","ಐಟಂಗಳು"],
+al1:["Please enter your name, phone number and address.","ದಯವಿಟ್ಟು ನಿಮ್ಮ ಹೆಸರು, ಫೋನ್ ಸಂಖ್ಯೆ ಮತ್ತು ವಿಳಾಸ ನಮೂದಿಸಿ."],
+al2:["Please add items from the menu or write your own list.","ದಯವಿಟ್ಟು ಮೆನುವಿನಿಂದ ಐಟಂ ಸೇರಿಸಿ ಅಥವಾ ನಿಮ್ಮ ಪಟ್ಟಿ ಬರೆಯಿರಿ."],
+al3:["Please write your list first.","ದಯವಿಟ್ಟು ಮೊದಲು ನಿಮ್ಮ ಪಟ್ಟಿ ಬರೆಯಿರಿ."]};
+
+let L="en";try{L=localStorage.getItem("anisha-lang")==="kn"?"kn":"en"}catch(e){}
+const T=k=>UI[k][L==="kn"?1:0];
+const nm=i=>L==="kn"?KN[i.id][0]:i.n, alt=i=>L==="kn"?i.n:KN[i.id][0], ds=i=>L==="kn"?KN[i.id][1]:i.b;
+const cn=c=>c==="All"?T("all"):(L==="kn"?CK[c]:c);
+const un=i=>{const u=i.u||"serving";return L==="kn"?UNIT[u]:u};
+
+function applyLang(){
+ document.documentElement.lang=L;
+ document.querySelectorAll("[data-t]").forEach(e=>e.innerHTML=T(e.dataset.t));
+ document.querySelectorAll("[data-ph]").forEach(e=>e.placeholder=T(e.dataset.ph));
+ $("#lang").textContent=L==="kn"?"English":"ಕನ್ನಡ";
+ const z=$("#zn"),cur=z.value||"0";
+ z.innerHTML=SLABS.map((q,k)=>`<option value="${k}">${L==="kn"?q.kn:q.en}${q.fee!==null?" – "+rs(q.fee):""}</option>`).join("");z.value=cur;
+ chips();grid();sum();
+}
+function chips(){ $("#chips").innerHTML=CATS.map(c=>`<button class="chip ${c===cat?"on":""}" data-c="${c}">${cn(c)}</button>`).join("");
+ document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{cat=b.dataset.c;chips();grid();}); }
+function grid(){
+ $("#grid").innerHTML=ITEMS.filter(i=>cat==="All"||i.c===cat).map(i=>`
+ <article class="card">
+  <div class="pic">${i.img?`<img src="${i.img}" alt="${i.n}" loading="lazy">`:art(i)}</div>
+  <div class="body"><span class="tag">${cn(i.c)}</span><h3>${nm(i)}</h3><span class="alt">${alt(i)}</span><p class="ben">${ds(i)}</p>
+  <div class="row"><div class="price">${rs(i.p)} <small>/ ${un(i)}</small></div><div id="a${i.id}"></div></div></div>
+ </article>`).join("");
+ ITEMS.forEach(i=>ctl(i.id));
+}
+function ctl(id){ const el=$("#a"+id); if(!el)return; const q=cart[id]||0;
+ el.innerHTML=q?`<div class="qty"><button aria-label="−" onclick="chg(${id},-1)">−</button><b>${q}</b><button aria-label="+" onclick="chg(${id},1)">+</button></div>`
+  :`<button class="add" onclick="chg(${id},1)">${T("add")}</button>`; }
+function chg(id,d){ cart[id]=Math.max(0,(cart[id]||0)+d); if(!cart[id])delete cart[id]; ctl(id); sum(); }
+const slab=()=>SLABS[+$("#zn").value||0];
+function totals(){ const food=Object.entries(cart).reduce((x,[id,q])=>x+ITEMS.find(i=>i.id==id).p*q,0);
+ const sl=slab(),pack=food?PACKING_FEE:0,tbc=!!food&&sl.fee===null,fee=food&&!tbc?sl.fee:0;
+ return {food,pack,fee,tbc,total:food+pack+fee}; }
+function ownTxt(){return $("#own").value.trim();}
+function sum(){ const t=totals(),n=Object.values(cart).reduce((a,b)=>a+b,0),has=!!ownTxt();
+ $("#bar").classList.toggle("show",n>0||has);
+ $("#barText").textContent=(n?`${n} ${T(n>1?"itn":"it1")} · ${rs(t.food)}`:"")+(n&&has?" + ":"")+(has?T("ol"):"");
+ if($("#sheet").classList.contains("open"))lines(); }
+function lines(){ const t=totals(),own=ownTxt();
+ const rows=Object.entries(cart).map(([id,q])=>{const i=ITEMS.find(x=>x.id==id);return `<div class="line"><span>${nm(i)} × ${q}</span><span>${rs(i.p*q)}</span></div>`}).join("");
+ const hint=MIN_ORDER&&t.food&&t.food<MIN_ORDER?`<div class="line" style="font-size:13px;color:#a33"><span>${T("minq").replace("{x}",rs(MIN_ORDER))}</span></div>`:"";
+ let h=!t.food?"":rows+`<div class="line"><span>${T("ftot")}</span><span>${rs(t.food)}</span></div><div class="line"><span>${T("pk")}</span><span>${rs(t.pack)}</span></div><div class="line"><span>${T("dc")}</span><span>${t.tbc?T("tbc"):rs(t.fee)}</span></div>${hint}<div class="line tot"><span>${T("tot")}</span><span>${rs(t.total)}${t.tbc?" +":""}</span></div>`;
+ if(own)h+=`<div class="line" style="display:block"><b>${T("ol")}</b><br>${own.replace(/</g,"&lt;").replace(/\n/g,"<br>")}<br><small>${T("oc")}</small></div>`;
+ $("#lines").innerHTML=h;
+ if(!t.food&&!own)$("#sheet").classList.remove("open"); }
+$("#open").onclick=()=>{lines();$("#sheet").classList.add("open")};
+$("#close").onclick=()=>$("#sheet").classList.remove("open");
+$("#sheet").onclick=e=>{if(e.target.id==="sheet")$("#sheet").classList.remove("open")};
+$("#send").onclick=()=>{
+ const nmv=$("#nm").value.trim(),ph=$("#ph").value.trim(),ad=$("#ad").value.trim(),own=ownTxt(),t=totals();
+ if(!t.food&&!own){alert(T("al2"));return;}
+ if(t.food&&MIN_ORDER&&t.food<MIN_ORDER){alert(T("minq").replace("{x}",rs(MIN_ORDER)));return;}
+ if(!nmv||!ph||!ad){alert(T("al1"));return;}
+ /* the WhatsApp message is always in English so the cook can read it easily */
+ let m="*New order – Anisha ಅನಿಶಾ*\n\n"+Object.entries(cart).map(([id,q])=>{const i=ITEMS.find(x=>x.id==id);return `${i.n} × ${q} = ${rs(i.p*q)}`}).join("\n");
+ if(t.food)m+=`\n\nFood: ${rs(t.food)}\nPacking: ${rs(t.pack)}\nDelivery (${slab().en}): ${t.tbc?"to be confirmed":rs(t.fee)}\n*Total: ${rs(t.total)}${t.tbc?" + delivery":""}*`;
+ if(own)m+=`\n\n*My own list:*\n${own}`;
+ m+=`\n\nName: ${nmv}\nPhone: ${ph}\nAddress: ${ad}\nWhen: ${$("#dt").value||"Not specified"}\nNotes: ${$("#ns").value||"-"}`;
+ window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(m)}`,"_blank"); };
+$("#contact").textContent="WhatsApp: +"+PHONE.replace(/^(\d{2})(\d+)/,"$1 $2");
+$("#own").oninput=sum;
+$("#zn").onchange=()=>{sum();lines();};
+$("#sendlist").onclick=()=>{if(!ownTxt()){alert(T("al3"));return;}lines();$("#sheet").classList.add("open")};
+$("#lang").onclick=()=>{L=L==="kn"?"en":"kn";try{localStorage.setItem("anisha-lang",L)}catch(e){}applyLang();};
+applyLang();
+</script>
+</body>
+</html>
